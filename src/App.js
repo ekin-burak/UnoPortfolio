@@ -1,106 +1,83 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+	Link,
+	useNavigate,
+} from "react-router-dom";
 import background from "./images/background.png";
 import logo from "./images/logo.png";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import "./styling/App.css";
+
+// apiKey: "ZHfCezQbSew4SaZ7r6MGRGqQq3LfF74uOztzp6nDboua6XSGUPYHxyyd0n1NPBlo",
+// apiSecret:
+// 	"9ynvjdgr8rSzNuykM54NOXNj3pb1ZiVtyPFL0yGTd9TSSMoWDERCuMkrlzHdqnRT",
 
 function App() {
+	const us = "mert";
+	const psw = "1";
+
+	const Root = () => {
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+		const navigate = useNavigate();
+		return (
+			<div
+				className="root"
+				style={{
+					// backgroundImage: `url(${background})`,
+					// backgroundSize: "cover",
+					width: width,
+					height: height,
+				}}
+			>
+				<div className="container">
+					<img className="unoLogo" src={logo}></img>
+					<form className="loginForm">
+						<input
+							className="textInput"
+							name="username"
+							placeholder="username"
+						/>
+						<input
+							className="textInput"
+							name="password"
+							placeholder="password"
+						/>
+
+						<input
+							onClick={() => {
+								navigate("/Dashboard");
+							}}
+							className="btn"
+							type="submit"
+							value="Login"
+						/>
+
+						<button
+							onClick={() => navigate("/Register")}
+							style={{
+								color: "white",
+								fontSize: 13,
+								marginTop: 13,
+								backgroundColor: "#606363",
+							}}
+						>
+							Don't have an account yet? Register Now!
+						</button>
+					</form>
+				</div>
+			</div>
+		);
+	};
 	return (
 		<Router>
 			<Routes>
-				<Route
-					path="/"
-					element={
-						<>
-							{
-								<div
-									className="body"
-									style={{
-										backgroundImage: `url(${background})`,
-										backgroundSize: "cover",
-									}}
-								>
-									<div className="container">
-										<img
-											style={{
-												height: 300,
-												width: 300,
-												marginBottom: 15,
-												alignSelf: "center",
-											}}
-											src={logo}
-										></img>
-										<form className="loginForm">
-											<input
-												style={{
-													border: "1px solid green",
-													borderRadius: 10,
-													padding: 10,
-													marginBottom: 4,
-													width: 200,
-												}}
-												name="username"
-												placeholder="username"
-											/>
-											<input
-												style={{
-													border: "1px solid green",
-													borderRadius: 10,
-													padding: 10,
-													marginBottom: 4,
-													width: 200,
-													height: 20,
-												}}
-												name="password"
-												placeholder="password"
-											/>
-											<Link
-												to={"/Dashboard"}
-												style={{
-													backgroundColor: "#37B4A2",
-													width: 130,
-													height: 40,
-													borderRadius: 10,
-													borderColor: "#37B4A2",
-													color: "white",
-													marginTop: 7,
-													fontSize: 14,
-												}}
-											>
-												<input
-													style={{
-														backgroundColor: "#37B4A2",
-														width: 130,
-														height: 40,
-														borderRadius: 10,
-														borderColor: "#37B4A2",
-														color: "white",
-
-														fontSize: 14,
-													}}
-													type="submit"
-													value="Login"
-												/>
-											</Link>
-											<Link
-												to={"/Register"}
-												style={{
-													color: "white",
-													fontSize: 13,
-													marginTop: 13,
-													backgroundColor: "#606363",
-												}}
-											>
-												Don't have an account yet? Register Now!
-											</Link>
-										</form>
-									</div>
-								</div>
-							}
-						</>
-					}
-				></Route>
+				<Route path="/" element={<Root></Root>}></Route>
 				<Route path="/Register" element={<Register />}></Route>
 				<Route path="/Dashboard" element={<Dashboard />}></Route>
 			</Routes>

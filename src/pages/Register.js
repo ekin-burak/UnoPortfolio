@@ -1,71 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import background from "../images/background.png";
 import logo from "../images/logo.png";
+import { useNavigate } from "react-router-dom";
 
-function Register() {
+const Register = () => {
+	const width = window.innerWidth;
+	const height = window.innerHeight;
+	const navigate = useNavigate();
 	return (
 		<div
 			className="body"
 			style={{
 				backgroundImage: `url(${background})`,
 				backgroundSize: "cover",
+				width: width,
+				height: height,
 			}}
 		>
 			<div className="container">
-				<img
-					style={{
-						height: 300,
-						width: 300,
-						marginBottom: 15,
-						alignSelf: "center",
-					}}
-					src={logo}
-				></img>
+				<img className="logo" src={logo}></img>
 				<form className="loginForm">
 					<input
-						style={{
-							border: "1px solid green",
-							borderRadius: 10,
-							padding: 10,
-							marginBottom: 4,
-							width: 200,
-						}}
+						className="textInput"
 						name="username"
 						placeholder="username"
 					/>
+					<input className="textInput" name="email" placeholder="email" />
 					<input
-						style={{
-							border: "1px solid green",
-							borderRadius: 10,
-							padding: 10,
-							marginBottom: 4,
-							width: 200,
-						}}
-						name="email"
-						placeholder="email"
-					/>
-					<input
-						style={{
-							border: "1px solid green",
-							borderRadius: 10,
-							padding: 10,
-							marginBottom: 4,
-							width: 200,
-							height: 20,
-						}}
+						className="textInput"
 						name="password"
 						placeholder="password"
 					/>
 					<input
-						style={{
-							border: "1px solid green",
-							borderRadius: 10,
-							padding: 10,
-							marginBottom: 4,
-							width: 200,
-							height: 20,
-						}}
+						className="textInput"
 						name="password again"
 						placeholder="password again"
 					/>
@@ -90,6 +57,6 @@ function Register() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Register;
