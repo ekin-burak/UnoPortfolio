@@ -3,7 +3,7 @@ import "./Dashboard_style.css";
 import logo from "../images/logo.png";
 import graph from "../images/graph.png";
 import { PieChart } from "react-minimal-pie-chart";
-
+import TradingViewWidget, { Themes } from "react-tradingview-widget";
 function Dashboard() {
 	const [coin1, setCoin1] = useState(0);
 	const [coin2, setCoin2] = useState(0);
@@ -50,6 +50,11 @@ function Dashboard() {
 	}, [5]);
 	return (
 		<div className="body">
+			{/* <TradingViewWidget
+				symbol="NASDAQ:AAPL"
+				theme={Themes.DARK}
+				
+			/> */}
 			<PieChart
 				data={[
 					{ title: "One", value: 50, color: "#E38627" },

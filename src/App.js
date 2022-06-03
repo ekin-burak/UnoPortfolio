@@ -13,10 +13,6 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import "./styling/App.css";
 
-// apiKey: "ZHfCezQbSew4SaZ7r6MGRGqQq3LfF74uOztzp6nDboua6XSGUPYHxyyd0n1NPBlo",
-// apiSecret:
-// 	"9ynvjdgr8rSzNuykM54NOXNj3pb1ZiVtyPFL0yGTd9TSSMoWDERCuMkrlzHdqnRT",
-
 function App() {
 	const us = "mert";
 	const psw = "1";
