@@ -2,6 +2,7 @@ import React from "react";
 import background from "../images/background.png";
 import logo from "../images/logo.png";
 import { useNavigate } from "react-router-dom";
+import "../styling/Register.css";
 
 const Register = () => {
 	const width = window.innerWidth;
@@ -37,16 +38,17 @@ const Register = () => {
 						placeholder="password again"
 					/>
 					<input
-						style={{
-							backgroundColor: "#37B4A2",
-							width: 130,
-							height: 40,
-							borderRadius: 10,
-							borderColor: "#37B4A2",
-							color: "white",
-							marginTop: 7,
-							fontSize: 14,
-						}}
+						className="btn"
+						// style={{
+						// 	backgroundColor: "#37B4A2",
+						// 	width: 130,
+						// 	height: 40,
+						// 	borderRadius: 10,
+						// 	borderColor: "#37B4A2",
+						// 	color: "white",
+						// 	marginTop: 7,
+						// 	fontSize: 14,
+						// }}
 						type="submit"
 						value="Register"
 					/>

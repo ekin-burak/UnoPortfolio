@@ -2,6 +2,7 @@ button {
 	float: left;
 	width: 200px;
 	border-radius: 15px;
+	cursor: pointer;
 }
 /* 
 button {
@@ -13,6 +14,11 @@ button {
 	margin-top: 10px;
 	margin-bottom: 10px;
 } */
+.body {
+	background-color: white;
+	position: relative;
+}
+
 a {
 	background-color: white;
 	text-decoration: none;
@@ -24,6 +30,7 @@ nav {
 	display: flex;
 	background-color: #37b4a2;
 	justify-content: space-between;
+	align-items: center;
 	padding-left: 10%;
 	padding-right: 10%;
 	margin-left: 15%;
@@ -43,7 +50,7 @@ nav {
 	right: 3%;
 	height: 80%;
 	width: 25%;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 .box {
 	width: 70%;
@@ -58,4 +65,31 @@ nav {
 p {
 	font-size: 18px;
 	font-weight: 600;
+}
+
+.navbar-btn {
+	width: 20%;
+	height: 80%;
+	border-radius: 10px;
+	transition: transform 125ms ease-in;
+	cursor: pointer;
+	border-color: white;
+	font-weight: bold;
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+.navbar-btn:hover {
+	transform: scale(1.1);
+}
+button:hover {
+	transform: scale(1.1);
+}
+
+.home-btn {
+	transition: transform 125ms ease-in;
+	cursor: pointer;
+}
+.home-btn:hover {
+	transform: scale(1.1);
 }

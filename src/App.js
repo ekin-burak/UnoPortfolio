@@ -3,15 +3,18 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Routes,
-	Link,
 	useNavigate,
 } from "react-router-dom";
 import background from "./images/background.png";
 import logo from "./images/logo.png";
 
 import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 import "./styling/App.css";
+import AddNotes from "./pages/AddNotes.js";
+import Graphs from "./pages/Graphs.js";
+import BalanceDetail from "./pages/BalanceDetail";
+import RecordTrade from "./pages/RecordTrade";
 
 function App() {
 	const us = "mert";
@@ -47,24 +50,25 @@ function App() {
 
 						<input
 							onClick={() => {
-								navigate("/Dashboard");
+								navigate("/Home");
 							}}
 							className="btn"
 							type="submit"
-							value="Login"
+							value="LOGIN"
 						/>
 
-						<button
-							onClick={() => navigate("/Register")}
+						<a
+							className="link"
+							href="/Register"
 							style={{
-								color: "white",
-								fontSize: 13,
+								fontSize: 15,
 								marginTop: 13,
-								backgroundColor: "#606363",
+								color: "white",
+								backgroundColor: "#606163",
 							}}
 						>
 							Don't have an account yet? Register Now!
-						</button>
+						</a>
 					</form>
 				</div>
 			</div>
@@ -75,7 +79,11 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Root></Root>}></Route>
 				<Route path="/Register" element={<Register />}></Route>
-				<Route path="/Dashboard" element={<Dashboard />}></Route>
+				<Route path="/Home" element={<Home />}></Route>
+				<Route path="/AddNotes" element={<AddNotes />}></Route>
+				<Route path="/Graphs" element={<Graphs />}></Route>
+				<Route path="/BalanceDetail" element={<BalanceDetail />}></Route>
+				<Route path="/RecordTrade" element={<RecordTrade />}></Route>
 			</Routes>
 		</Router>
 	);

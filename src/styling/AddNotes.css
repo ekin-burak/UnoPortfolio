@@ -1,0 +1,19 @@
+.note-list-container {
+	position: absolute;
+	top: 70%;
+	left: 25%;
+	width: 49%;
+	height: 20%;
+	border: 1px solid rgba(0, 0, 0, 0.136);
+	padding: 0px;
+}
+
+.note-item {
+	width: 100%;
+	height: 25%;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	padding-left: 1%;
+	margin: 0px;
+}
