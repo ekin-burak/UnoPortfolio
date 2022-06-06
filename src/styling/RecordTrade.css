@@ -1,26 +1,18 @@
-.table-head {
-	width: 50%;
-	height: 8%;
-	display: flex;
-	background-color: #37b4a2;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	flex-direction: row;
-	border: 2px solid #37b4a2;
-	align-items: center;
-}
-
 .trade-btn {
-	width: 25%;
-	height: 80%;
-	border: 1px solid white;
-	margin-left: 2%;
-	border-radius: 20px;
+	width: 50%;
+	height: 100%;
+	border: 1px solid #37b4a2;
 	font-size: 14px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
+	cursor: pointer;
+	transition: transform 125ms ease-in;
+}
+
+.trade-btn:hover {
+	transform: scale(1.06);
 }
 
 .asset-type {
@@ -36,37 +28,22 @@
 
 	color: white;
 }
-
-.search-input {
-	width: 25%;
-	height: 80%;
-	border: 1px solid white;
-	margin-left: 2%;
-	border-radius: 20px;
-	font-size: 17px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: black;
-	padding-left: 10px;
-}
-
-.table-body {
-	height: 40%;
-	width: 50%;
-	border: 2px solid #37b4a2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 1%;
-}
-.list-item {
-	height: 15%;
-	width: 80%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: 4%;
-	padding-right: 4%;
+.record-input {
+	transition: transform 125ms ease-in;
 	border: 1px solid #37b4a2;
+}
+
+.record-input:focus {
+	transform: scale(1.03);
+	box-shadow: 2px 0 6px 0 #37b4a2;
+}
+
+.record-btn {
+	transition: transform 125ms ease-in;
+	border: 1px solid #37b4a2;
+}
+
+.record-btn:hover {
+	transform: scale(1.03);
+	box-shadow: 2px 0 6px 0 #37b4a2;
 }

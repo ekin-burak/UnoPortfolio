@@ -6,6 +6,7 @@ import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import { useNavigate } from "react-router-dom";
 import "../styling/AddNotes.css";
 import { FaHome } from "react-icons/fa";
+import Authentication from "./Authentication";
 
 function AddNotes() {
 	const width = window.innerWidth;
@@ -36,6 +37,9 @@ function AddNotes() {
 					size={40}
 					style={{ position: "absolute", left: "5%", color: "white" }}
 				></FaHome>
+				<button onClick={() => navigate("/Home")} className="navbar-btn">
+					{Authentication.getUserName()}
+				</button>
 				<button
 					onClick={() => {
 						navigate("/");
@@ -52,14 +56,7 @@ function AddNotes() {
 				>
 					Record Trade Activity
 				</button>
-				<button
-					onClick={() => {
-						navigate("/AddNotes");
-					}}
-					className="navbar-btn"
-				>
-					Add Notes
-				</button>
+
 				<button
 					onClick={() => {
 						navigate("/Graphs");
@@ -68,7 +65,15 @@ function AddNotes() {
 				>
 					Graphs
 				</button>
-				<button className="navbar-btn">My Account</button>
+				<button
+					onClick={() => {
+						Authentication.logout();
+						navigate("/");
+					}}
+					className="navbar-btn"
+				>
+					Log out
+				</button>
 			</nav>
 			{/* <TradingViewWidget symbol="NASDAQ:Old Note TitlePL" theme={Themes.DARK} /> */}
 

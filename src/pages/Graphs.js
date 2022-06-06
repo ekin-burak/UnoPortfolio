@@ -6,7 +6,7 @@ import { PieChart } from "react-minimal-pie-chart";
 import TradingViewWidget, { Themes } from "react-tradingview-widget";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-import TradeChart from "./Chart";
+import Authentication from "./Authentication";
 
 function Home() {
 	const navigate = useNavigate();
@@ -44,6 +44,9 @@ function Home() {
 					size={40}
 					style={{ position: "absolute", left: "5%", color: "white" }}
 				></FaHome>
+				<button onClick={() => navigate("/Home")} className="navbar-btn">
+					{Authentication.getUserName()}
+				</button>
 				<button className="navbar-btn">Change Capital</button>
 				<button
 					onClick={() => {
@@ -53,19 +56,22 @@ function Home() {
 				>
 					Record Trade Activity
 				</button>
-				<button
-					onClick={() => navigate("/AddNotes")}
-					className="navbar-btn"
-				>
-					Add Notes
-				</button>
+
 				<button onClick={() => navigate("/Graphs")} className="navbar-btn">
 					Graphs
 				</button>
-				<button className="navbar-btn">My Account</button>
+				<button
+					onClick={() => {
+						Authentication.logout();
+						navigate("/");
+					}}
+					className="navbar-btn"
+				>
+					Log out
+				</button>
 			</nav>
-			{/* <TradingViewWidget symbol="BINANCE:BTCUSDT" /> */}
-			<TradeChart></TradeChart>
+			<TradingViewWidget symbol="BINANCE:BTCUSDT" />
+			{/* <TradeChart></TradeChart> */}
 		</div>
 	);
 }
